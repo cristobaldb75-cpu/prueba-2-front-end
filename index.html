@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Configura el documento como UTF-8 y responsive -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aysén Vivo - Experiencias Turísticas</title>
+  <!-- Enlaza el archivo de estilos CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header: encabezado principal de la página -->
+  <header>
+    <h1>🏔️ Aysén Vivo</h1>
+    <p>Experiencias Turísticas Sostenibles de la Patagonia</p>
+  </header>
+
+  <!-- Main: contenedor principal del contenido -->
+  <main>
+    <!-- Sección de filtros -->
+    <section class="filtros">
+      <h2>Filtrar por Categoría</h2>
+      <!-- Botones de filtro: cada uno filtra las experiencias por categoría -->
+      <button class="boton-filtro activo" data-categoria="Todos">Todos</button>
+      <button class="boton-filtro" data-categoria="Navegación">Navegación</button>
+      <button class="boton-filtro" data-categoria="Trekking">Trekking</button>
+      <button class="boton-filtro" data-categoria="Pesca">Pesca</button>
+      <button class="boton-filtro" data-categoria="Cultura">Cultura</button>
+    </section>
+
+    <!-- Sección de tarjetas: aquí se renderizarán las experiencias dinámicamente -->
+    <section class="experiencias" id="contenedor-experiencias">
+      <!-- Las tarjetas se generan aquí con JavaScript -->
+    </section>
+
+    <!-- Sección del formulario de reserva -->
+    <section class="formulario-reserva">
+      <h2>Realizar una Reserva</h2>
+      <!-- Formulario con campos obligatorios -->
+      <form id="formulario">
+        <!-- Campo: nombre completo -->
+        <div class="grupo-campo">
+          <label for="nombre">Nombre Completo *</label>
+          <input type="text" id="nombre" required>
+          <span class="error" id="error-nombre"></span>
+        </div>
+
+        <!-- Campo: email -->
+        <div class="grupo-campo">
+          <label for="email">Email *</label>
+          <input type="email" id="email" required>
+          <span class="error" id="error-email"></span>
+        </div>
+
+        <!-- Campo: seleccionar experiencia -->
+        <div class="grupo-campo">
+          <label for="experiencia">Experiencia *</label>
+          <select id="experiencia" required>
+            <option value="">Selecciona una experiencia</option>
+            <!-- Las opciones se generan dinámicamente con JavaScript -->
+          </select>
+          <span class="error" id="error-experiencia"></span>
+        </div>
+
+        <!-- Campo: número de personas -->
+        <div class="grupo-campo">
+          <label for="personas">Número de Personas *</label>
+          <input type="number" id="personas" min="1" required>
+          <span class="error" id="error-personas"></span>
+        </div>
+
+        <!-- Campo: fecha de la reserva -->
+        <div class="grupo-campo">
+          <label for="fecha">Fecha *</label>
+          <input type="date" id="fecha" required>
+          <span class="error" id="error-fecha"></span>
+        </div>
+
+        <!-- Botón enviar -->
+        <button type="submit" class="boton-enviar">Reservar</button>
+      </form>
+
+      <!-- Mensaje de éxito (se oculta al inicio) -->
+      <div id="mensaje-exito" class="mensaje-exito" style="display: none;">
+        ¡Reserva realizada con éxito!
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer: pie de página -->
+  <footer>
+    <p>&copy; 2024 Aysén Vivo. Experiencias sostenibles de la Patagonia.</p>
+  </footer>
+
+  <!-- Script: enlaza el archivo JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
